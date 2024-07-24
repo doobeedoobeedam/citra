@@ -1,12 +1,8 @@
 import React from 'react';
 
 const Modal = ({ title, projectDocs, demoLink, closeModal }) => {
-    if (!projectDocs) {
-        window.location.href = demoLink;
-    }
-
     return (
-        <div className="modal fade show" style={{ display: "block" }} tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true">
+        <div className="modal custom-modal fade show" style={{ display: "block" }} tabindex="-1" aria-labelledby="projectModalLabel" aria-hidden="true" dialogClassName="custom-modal">
             <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
                 <div className="modal-content bg-transparent border-0 rounded-0">
                     <div className="modal-header border-0 mb-1 p-0">
@@ -16,7 +12,8 @@ const Modal = ({ title, projectDocs, demoLink, closeModal }) => {
                         </button>
                     </div>
                     <div className="modal-body p-0">
-                        <iframe id="pdfIframe" src={`assets/docs/${projectDocs}`} width="100%" height="500px" style={{ border: "none" }}></iframe>
+                        <iframe id="pdfIframe" src={`assets/docs/${projectDocs}`} width="100%" height="500px" border="0"
+            style={{ border: "none" }}></iframe>
                     </div>
                 </div>
             </div>
